@@ -9,8 +9,12 @@
 - Con
 
 
-### Model Weights
-![Our best model](./model_out/synapse_epoch_579.pth)
+### Model weights
+The learned weights of the DFAFormer. 
+
+Task |Model weights
+------------ |----
+Multi organ segmentation | [DFA-Former](https://...)
 
 ### Datasets
 Download the Synapse dataset from [here](https://drive.google.com/uc?export=download&id=18I9JHH_i0uuEDg-N6d7bfMdf7Ut6bhBi).
