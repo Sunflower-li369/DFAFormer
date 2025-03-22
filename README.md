@@ -28,12 +28,12 @@ Download the Synapse dataset from [here](https://drive.google.com/uc?export=down
 
 2) Run train.py 
     ```bash
-    python train.py --batch_size 20 --eval_interval 20 --max_epochs 580 --module networks.DFAFormer.DFAFormer
+    python train.py --batch_size 20 --max_epochs 580 --eval_interval 20 --module networks.DFAFormer.DFAFormer
     ```
 
  3) Run test.py
     ```bash
-    python test.py --batch_size 20 --eval_interval 20 --max_epochs 580 --module networks.DFAFormer.DFAFormer
+    python test.py --batch_size 20 --max_epochs 580 --eval_interval 20 --module networks.DFAFormer.DFAFormer
     ```
 
 ## Results
