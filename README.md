@@ -25,7 +25,7 @@ Download the Synapse dataset[here](https://drive.google.com/uc?export=download&i
     `pip install -r requirements.txt`
 
 2) Run train.py 
-   or ```bash
+    ```bash
     python train.py --root_path ./data/Synapse/train_npz --test_path ./data/Synapse/test_vol_h5 --batch_size 20 --eval_interval 20 --max_epochs 580 --module networks.DFAFormer.DFAFormer
     ```
 
