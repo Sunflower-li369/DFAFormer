@@ -26,11 +26,13 @@ Download the Synapse dataset[here](https://drive.google.com/uc?export=download&i
 
 2) Run train.py 
     ```bash
-    python train.py --root_path ./data/Synapse/train_npz --test_path ./data/Synapse/test_vol_h5 --batch_size 20 --eval_interval 20 --max_epochs 580 --module networks.DFAFormer.DFAFormer
+    python train.py --batch_size 20 --eval_interval 20 --max_epochs 580 --module networks.DFAFormer.DFAFormer
     ```
 
  3) Run test.py
-
+   ```bash
+    python test.py --batch_size 20 --eval_interval 20 --max_epochs 580 --module networks.DFAFormer.DFAFormer
+    ```
     
 ## Results
 The performance comparision on the Synapse dataset.
