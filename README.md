@@ -10,12 +10,11 @@
 
 
 ### Model Weights
-You can download the learned weights of the DFAFomrer in the following table. 
-[.pth](./model_out/synapse_epoch_579.pth) |
+The best model(./model_out/synapse_epoch_579.pth) |
 
 
 ### Datasets
-Download the Synapse dataset[here](https://drive.google.com/uc?export=download&id=18I9JHH_i0uuEDg-N6d7bfMdf7Ut6bhBi).
+Download the Synapse dataset from [here](https://drive.google.com/uc?export=download&id=18I9JHH_i0uuEDg-N6d7bfMdf7Ut6bhBi).
 
 
 ### Training and Testing
