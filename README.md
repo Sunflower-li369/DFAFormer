@@ -10,8 +10,7 @@
 
 
 ### Model Weights
-The best model(./model_out/synapse_epoch_579.pth) |
-
+![Our best model](./model_out/synapse_epoch_579.pth)
 
 ### Datasets
 Download the Synapse dataset from [here](https://drive.google.com/uc?export=download&id=18I9JHH_i0uuEDg-N6d7bfMdf7Ut6bhBi).
