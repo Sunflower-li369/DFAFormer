@@ -14,19 +14,18 @@ Download the Synapse dataset from [here](https://drive.google.com/uc?export=down
 
 ### Training and Testing
 
-1) Run the following code to install the requirements.
+1) Install the Requirements:
 
     `pip install -r requirements.txt`
 
-2) Run train.py 
+2) Train:
     ```bash
-    python train.py --batch_size 20 --max_epochs 580 --eval_interval 20 --module networks.DFAFormer.DFAFormer
+    python train.py --batch_size 20 --max_epochs 580 --module networks.DFAFormer.DFAFormer --eval_interval 20 
     ```
 
- 3) Run test.py
+ 3) Test:
     ```bash
-    python test.py --batch_size 20 --max_epochs 580 --eval_interval 20 --module networks.DFAFormer.DFAFormer
+    python test.py --batch_size 20 --max_epochs 580 --module networks.DFAFormer.DFAFormer --eval_interval 20 
     ```
 
-## Results
-The performance comparision on the Synapse dataset.
+## Experiment Results
