@@ -29,3 +29,7 @@ Download the Synapse dataset from [here](https://drive.google.com/uc?export=down
     ```
 
 ## Experiment Results
+![Synapse](./synapse.jpg)
+![ISIC 2018](./ISIC2018.jpg)
+![Synapse1](./Synapse1.jpg)
+![ISIC 2018 1](./ISIC20181.jpg)
