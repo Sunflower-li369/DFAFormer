@@ -1,7 +1,7 @@
 # [DFAFomrer: Dual Feature Aggregation Transformer for Medical Image Segmentation]
 
 
-![Our DFAFormer](./model.jpg)
+![Our DFAFormer](./images/model.jpg)
 
 ## Updates
 
@@ -29,7 +29,7 @@ Download the Synapse dataset from [here](https://drive.google.com/uc?export=down
     ```
 
 ## Experiment Results
-![Synapse](./synapse.jpg)
-![ISIC 2018](./ISIC2018.jpg)
-![Synapse1](./Synapse1.jpg)
-![ISIC 2018 1](./ISIC20181.jpg)
+![Synapse](./images/synapse.jpg)
+![ISIC 2018](./images/ISIC2018.jpg)
+![Synapse1](./images/Synapse1.jpg)
+![ISIC 2018 1](./images/ISIC20181.jpg)
