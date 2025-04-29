@@ -364,7 +364,6 @@ class MyDecoderLayer(nn.Module):
         value_dim = in_out_chan[3]
         x1_dim = in_out_chan[4]
 
-        # gai zeng 1.9: 初始化DIFFTransformer
         self.diff_transformer = DIFFTransformer(dim=out_dim, num_heads=head_count, layer_idx=1)
 
         if not is_last:
@@ -411,7 +410,6 @@ class MyDecoderLayer(nn.Module):
             x2 = x2.view(b, -1, c)
             x1_expand = self.x1_linear(x1)
 
-            # gai zeng 1.9: 在进入cross_attn之前应用DIFFTransformer
             x1_expand = self.diff_transformer(x1_expand, h, w)
 
             cat_linear_x = self.concat_linear(self.cross_attn(x1_expand, x2))
