@@ -29,4 +29,4 @@ Download the Synapse dataset from [here](https://drive.google.com/uc?export=down
     ```
 
 ## Experiment Results
-![Synapse](./images/synapse.png)
+![Synapse](./synapse.png)
