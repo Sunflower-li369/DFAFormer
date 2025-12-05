@@ -12,7 +12,7 @@ class SpatialGate(nn.Module):
 
     def forward(self, x):
         B, N, C = x.shape
-        H = W = int(math.sqrt(N))  # 根据N推断H和W
+        H = W = int(math.sqrt(N)) 
         x1, x2 = x.chunk(2, dim=-1)
         x2 = self.conv(self.norm(x2).transpose(1, 2).contiguous().view(B, C//2, H, W)).flatten(2).transpose(-1, -2).contiguous()
         return x1 * x2
@@ -39,9 +39,10 @@ class SGFN(nn.Module):
         x = self.act(x)
         x = self.drop(x)
 
-        x = self.sg(x)  # 移除了H和W参数
+        x = self.sg(x)  
         x = self.drop(x)
 
         x = self.fc2(x)
         x = self.drop(x)
+
         return x
