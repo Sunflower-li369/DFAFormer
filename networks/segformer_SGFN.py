@@ -190,7 +190,6 @@ class DWConv(nn.Module):
         conv_x = self.dwconv(tx)
         return conv_x.flatten(2).transpose(1, 2)
 
-# gai 12.21
 class MixSGFN(nn.Module):
     def __init__(self, c1, c2):
         super().__init__()
@@ -245,27 +244,6 @@ class MixD_SGFN(nn.Module):
 
         return fuse
 
-
-# class OverlapPatchEmbeddings(nn.Module):
-#     def __init__(self, img_size=224, patch_size=7, stride=4, padding=1, in_ch=3, dim=768):
-#         super().__init__()
-#         self.num_patches = (img_size // patch_size) ** 2
-#         self.proj = nn.Conv2d(in_ch, dim, patch_size, stride, padding)
-#         self.norm = nn.LayerNorm(dim)
-#
-#     def forward(self, x: torch.Tensor) -> torch.Tensor:
-#         px = self.proj(x)
-#         _, _, H, W = px.shape
-#         fx = px.flatten(2).transpose(1, 2)
-#         nfx = self.norm(fx)
-#         return nfx, H, W
-
-import torch
-import torch.nn as nn
-from torch import Tensor
-from typing import Tuple
-
-
 class OverlapPatchEmbeddings(nn.Module):
     """
     重叠块嵌入模块，使用带步长的卷积将图像转为序列化特征。
@@ -293,7 +271,6 @@ class OverlapPatchEmbeddings(nn.Module):
 
         B, C, H, W = x.shape
 
-        # 检查输入通道是否正确
         if C != 1:
             raise ValueError(f"Expected 1 channel for medical image, got {C}. Check data loader.")
 
@@ -311,8 +288,7 @@ class MLP(nn.Module):
     def __init__(self, dim, embed_dim):
         super().__init__()
         self.proj = nn.Linear(dim, embed_dim)
-        # self.proj = nn.Linear(128, 512)  # 确保输入维度与实际输入的 C 一致
-
+        
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         x = x.flatten(2).transpose(1, 2)
         return self.proj(x)
@@ -396,19 +372,18 @@ class FuseTransformerBlock(nn.Module):
 class MLP(nn.Module):
     def __init__(self, dim, embed_dim, hidden_dim=None, output_dim=None):
         super().__init__()
-        hidden_dim = hidden_dim if hidden_dim is not None else embed_dim  # 如果没有指定 hidden_dim，则默认等于 embed_dim
-        output_dim = output_dim if output_dim is not None else dim  # 如果没有指定 output_dim，则默认等于 dim
+        hidden_dim = hidden_dim if hidden_dim is not None else embed_dim  
+        output_dim = output_dim if output_dim is not None else dim 
 
-        self.fc1 = nn.Linear(dim, hidden_dim)  # 第一个线性层
-        self.fc2 = nn.Linear(hidden_dim, output_dim)  # 第二个线性层
-        self.act = nn.GELU()  # 激活函数
+        self.fc1 = nn.Linear(dim, hidden_dim) 
+        self.fc2 = nn.Linear(hidden_dim, output_dim)  
+        self.act = nn.GELU() 
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
-        # print(f"Input shape to MLP: {x.shape}")  # 调试信息
+        # print(f"Input shape to MLP: {x.shape}")  
         x = self.fc1(x)
-        x = self.act(x)  # 应用激活函数
+        x = self.act(x)  
         x = self.fc2(x)
-        # print(f"Output shape from MLP: {x.shape}")  # 调试信息
         return x
 
 
@@ -439,7 +414,7 @@ class MiT(nn.Module):
             patch_size=7,
             stride=4,
             padding=3,
-            in_ch=1,  # ✅ 改为 1，因为是灰度图
+            in_ch=1,  
             dim=64
         )   # gai 10.11
         self.patch_embed2 = OverlapPatchEmbeddings(
